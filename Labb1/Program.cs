@@ -2,34 +2,32 @@
 using System.Xml.Schema;
 
 Console.WriteLine("Skriv in valfri sträng:");
-string input = Console.ReadLine();  
-//string input = "29535123p48723487597645723645";
+//string input = Console.ReadLine();  
+string input = "29535123p48723487597645723645";
 
+    
     for (int i = 0; i < input.Length; i++)
     {
-        char tecken = input[i];
-
-        if (char.IsDigit(tecken))
+        //Om.. char är en siffra
+        if (char.IsDigit(input[i]))
         {
-            string delsträng = tecken.ToString();
+            string delsträng = input[i].ToString();
            
             for (int j = i + 1; j < input.Length; j++)
             {
-                char deltecken = input[j];
-                
-                if (char.IsLetter(deltecken))
+                //Om.. Char är en bokstav, bryt. 
+                if (char.IsLetter(input[j]))
                 {
                     break;
                 }
-
-            if (deltecken != tecken)
-            {
-                delsträng += deltecken;
-            }
-
-            else
-            {
-                    delsträng += deltecken;
+                // Om.. dom är skilda.
+                if (input[j] != input[i])
+                {
+                   delsträng += input[j];
+                }
+                else
+                {
+                    delsträng += input[j];
 
                     string startsträng = input.Substring(0, i);
                     string slutsträng = input.Substring(startsträng.Length + delsträng.Length);
