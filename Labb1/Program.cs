@@ -1,6 +1,4 @@
 ﻿
-using System.Xml.Schema;
-
 Console.WriteLine("Skriv in valfri sträng:");
 string input = Console.ReadLine();  
 
